@@ -16,7 +16,7 @@ st.write('Given subject premiums for each state, the calculator below produces t
 st.subheader('Calculator')
 st.write('Enter each state\'s name and subject premium; the individual premium discounts appear below. If your policy has less than five states,\
     just enter the states you have and leave the other entries\' subject premium at zero.')
-premium_tables = pd.read_excel("state_premium_tables.xlsx")
+premium_tables = pd.read_csv("state_premium_tables.xlsx")
 premium_tables['State'] = premium_tables['State'].str.title()
 na_states = premium_tables[premium_tables['Table'].isna()]['State'].unique()
 premium_tables = premium_tables.dropna()   
@@ -67,9 +67,9 @@ with c51:
 with c52:
     subject_premium5 = st.number_input('Subject premium 5',min_value=0)
 
-table1 = pd.read_excel('premium_tables.xlsx',sheet_name='Table 1')
-table7 = pd.read_excel('premium_tables.xlsx',sheet_name='Table 7')
-table9 = pd.read_excel('premium_tables.xlsx',sheet_name='Table 9')
+table1 = pd.read_csv('table1.csv')
+table7 = pd.read_csv('table7.csv')
+table9 = pd.read_csv('table9.csv')
 
 table1_layers = [
     [0,5000,0],
