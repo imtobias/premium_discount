@@ -6,10 +6,19 @@ import streamlit as st
 
 st.title('Premium Discount')
 st.subheader('Procedure')
-st.write('Given subject premiums for each state, the calculator below produces the premium discount for each state. \
-    In brief, (1) For each state, calculate the discount using the state-specific table, as if the total subject premium were fully applied to the state.\
-        (2) Multiply each quantity in (1) by the corresponding state\'s fraction of the total subject premium; this is the state\'s premium discount.\
-        (3) Sum the quantities in (2) to get the policy\'s premium discount.')
+st.write("""Premium discounts
+are an insurance-specific instance of the general notion in economics of quantity discounts: Clients get a discount for contracts with larger premiums. These
+discounts are dictated by regulatory agencies, and are calculated exactly like income taxes for single-state policies: Apply a marginal tax (discount) rate to each 
+income (premium) bracket, then add up the tax (discount) from each bracket. Each state has a specified premium discount table, which may have different rates and brackets.
+
+The procedure for multi-state policies is similar: 
+
+(1) For each state s, use the total policy premium T to calculate the premium discount D(s,T) for a single-state policy in state S with premium T.
+
+(2) Let the premium written in state s be denoted by P(s). Then the premium discount on the policy is""")
+st.latex(r'''\sum_s \frac{P(s)}{T}D(s,T). ''')
+
+st.write("The calculator below produces the premium discount for each state, if you specify the policy's premium in each state.")
 #get user inputs for bodyweight and target bodyweight loss as a percent;
 #produce target calories and macros as output
 #states = pd.read_csv("state_names.csv")
@@ -148,4 +157,4 @@ with col3:
     st.write(table9)
 
 st.subheader('Contact')
-st.write('For questions/help, you can reach me at toby.im@clearspringinsurance.com')
+st.write('For questions/help, you can reach me at tobyim@gmail.com')
