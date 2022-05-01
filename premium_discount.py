@@ -13,7 +13,7 @@ income (premium) bracket, then add up the tax (discount) from each bracket. Each
 
 The procedure for multi-state policies is similar: 
 
-(1) For each state s, use the total policy premium T to calculate the premium discount D(s,T) for a single-state policy in state S with premium T.
+(1) For each state s, use the total policy premium T to calculate the premium discount D(s,T) for a single-state policy in state s with premium T.
 
 (2) Let the premium written in state s be denoted by P(s). Then the premium discount on the policy is""")
 st.latex(r'''\sum_s \frac{P(s)}{T}D(s,T). ''')
